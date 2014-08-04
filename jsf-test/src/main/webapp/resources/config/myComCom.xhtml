@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:h="http://java.sun.com/jsf/html">
+	<body>
+		<composite:interface>
+			<composite:attribute name="userNameLabel"/>
+			<composite:attribute name="userName"/>
+			<composite:attribute name="passwordLabel"/>
+			<composite:attribute name="password" />
+			<composite:attribute name="loginButtonLabel"/>
+			<composite:attribute name="loginButton" method-signature="java.lang.String login"/>
+		</composite:interface>
+		<composite:implementation>
+			<h:message for="loginPanel" style="color:red;"/>
+			<h:panelGrid columns="2" id="loginPanel">
+				#{cc.attrs.userNameLabel} :
+				<h:inputText value="#{cc.attrs.userName}" id="userName" />
+				#{cc.attrs.passwordLabel}:
+				<h:inputText value="#{cc.attrs.password}" id="password"/>
+			</h:panelGrid>
+			<h:commandButton value="#{cc.attrs.loginButtonLabel}" action="#{cc.attrs.loginButton}" />
+		</composite:implementation>
+	</body>
+</html>

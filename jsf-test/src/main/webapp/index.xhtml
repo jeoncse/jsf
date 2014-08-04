@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+	<h:form>
+		<h3>using managedBean</h3>
+		<h3>Using JSF default outcome</h3>
+		<h:commandButton action="page1" value="page1" />
+		<h3>Select page</h3>
+		<h:commandLink action="#{navigationController.selectPage}"
+			value="page1">
+			<f:param name="pageId" value="1" />
+		</h:commandLink>
+		<h:outputText value="&#160;" />
+		<h:commandLink action="#{navigationController.selectPage}"
+			value="page2">
+			<f:param name="pageId" value="2" />
+		</h:commandLink>
+		<h:outputText value="&#160;" />
+		<h:commandLink action="#{navigationController.selectPage}"
+			value="home">
+			<f:param name="pageId" value="3" />
+		</h:commandLink>
+	</h:form>
+
+	<br />
+	<h2>"From Action" Navigation</h2>
+	<hr />
+	<h:form>
+		<h:commandLink action="#{navigationController.processPage1}"
+			value="Page1" />
+			<h:outputText value="&#160;" />
+		<h:commandLink action="#{navigationController.processPage2}"
+			value="Page2" />
+	</h:form>
+
+</body>
+</html>

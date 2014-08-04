@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://java.sun.com/jsf/composite/config"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>Insert title here</title>
+
+</head>
+<body>
+	okok
+
+	<h:form>
+		<p:myComCom userNameLabel="Enter User Name: "
+			userName="#{userData.name}" passwordLabel="Enter Password: "
+			password="#{userData.password}" loginButtonLabel="Login"
+			loginButton="#{userData.login}" />
+	<!-- </h:form>
+
+	<h:form> -->
+		<h:inputText value="#{userData.name}" id="inName" />
+		<h:commandButton value="say hi" action="#{userData.sayHello}" />
+		<f:ajax execute="inName" render="outMessage" event="click" />
+		<h2>output:
+			<h:outputText id="outMessage"
+				value="#{userData.helloSaid}" />
+		</h2>
+	</h:form>
+</body>
+</html>
